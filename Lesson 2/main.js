@@ -31,7 +31,7 @@ for(let i = 0; i <=10; i++){
 //Task4--------------------------------------------------------------------------------------
 //За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 for(let i = 0; i <=10; i++){
-    document.write("<div>Okten</div>" + i)
+    document.write("<div>Okten " + i + "</div>")
 }
 
 
@@ -48,7 +48,7 @@ while(indexTask5 <= 20){
 //За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
 let indexTask6 = 0;
 while(indexTask6 <= 20){
-    document.write("<h1>Вивести 20 блоків h1</h1>" + indexTask6);
+    document.write("<h1>Вивести 20 блоків h1: " + indexTask6 + "</h1>" );
     indexTask6++;
 }
 
@@ -178,17 +178,16 @@ console.log("Task17--------------------------");
 document.write("<br>");
 //Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
 
-
-for( let i = 0; i <=100; i+=2){
-    console.log(i);
-    document.write(" " + i);
+for( let i = 0; i <=100; i++){
+    if(i%2 === 0){
+        console.log(i);
+        document.write(" " + i);
+    }
 }
 
-// for( let i = 0; i <=100; i++){
-//     if(i%2 === 0){
-//         console.log(i);
-//         document.write(" " + i);
-//     }
+// for( let i = 0; i <=100; i+=2){
+//     console.log(i);
+//     document.write(" " + i);
 // }
 
 
@@ -197,10 +196,17 @@ console.log("Task18--------------------------");
 document.write("<br>");
 //Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
 
-for( let i = 1; i <=100; i+=2){
+for( let i = 0; i <=100; i++){
+    if(i%2 === 1){
         console.log(i);
         document.write(" " + i);
+    }
 }
+
+// for( let i = 1; i <=100; i+=2){
+//         console.log(i);
+//         document.write(" " + i);
+// }
 
 
 //Task19--------------------------------------------------------------------------------------
@@ -219,6 +225,7 @@ document.write("<br>");
 //Task20--------------------------------------------------------------------------------------
 console.log("Task20--------------------------");
 document.write("<br>");
+
 // Відтворити роботу годинника, відрахувавши  2 години 20 хвилини (3 цикли! 1й - години, 2й - хвилини, 3й - секунди)
 //
 // for( let i = 1; i <=2; i++){
@@ -232,21 +239,63 @@ document.write("<br>");
 // }
 
 
-
-
+// Додатково
 //Task21--------------------------------------------------------------------------------------
+
 console.log("Task21--------------------------");
 document.write("<br>");
-//
-// Додатково
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for зібрати всі букви в слово.
 const arrTask21 = [ 'a', 'b', 'c'];
+let wordTask21 = "";
 
 for( let i = 0; i < arrTask21.length; i++){
-    let letter = arrTask21[i];
-    let word = letter[0] + letter[1];
-    console.log(letter);
-    console.log(word);
+    wordTask21 = wordTask21 + arrTask21[i];
 }
+console.log(wordTask21);
+
+
+//Task22--------------------------------------------------------------------------------------
+console.log("Task22--------------------------");
+document.write("<br>");
+// Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу while зібрати всі букви в слово.
+const arrTask22 = [ 'a', 'b', 'c'];
+let wordTask22 = "";
+
+let i = 0;
+while( i < arrTask22.length){
+    wordTask22 = wordTask22 + arrTask22[i];
+    i++;
+}
+console.log(wordTask22);
+
+
+//Task23--------------------------------------------------------------------------------------
+console.log("Task23--------------------------");
+document.write("<br>");
+//Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for of зібрати всі букви в слово.
+const arrTask23 = [ 'a', 'b', 'c'];
+let wordTask23 = "";
+
+for( const element of arrTask23){
+    wordTask23 = wordTask23 + element;
+}
+console.log(wordTask23);
+
+
+//Task24--------------------------------------------------------------------------------------
+console.log("Task24--------------------------");
+document.write("<br>");
+//Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for in зібрати всі букви в слово.
+const arrTask24 = [ 'a', 'b', 'c'];
+let wordTask24 = "";
+
+for( const element in arrTask24){
+    wordTask24 = wordTask24 + arrTask24[element];
+}
+console.log(wordTask24);
+
+
+
+
 
 
