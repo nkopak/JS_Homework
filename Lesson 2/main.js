@@ -215,7 +215,7 @@ document.write("<br>");
 //Відтворити роботу годинника, відрахувавши 2 хвилини (2 цикли! 1й - хвилини, 2й - секунди)
 //
 for( let i = 1; i <=2; i++){
-    for( let i = 0; i <= 60; i++){
+    for( let i = 0; i <= 59; i++){
         console.log("sec: " + i);
     }
     console.log("min: " + i);
@@ -228,15 +228,18 @@ document.write("<br>");
 
 // Відтворити роботу годинника, відрахувавши  2 години 20 хвилини (3 цикли! 1й - години, 2й - хвилини, 3й - секунди)
 
-for( let i = 1; i <=2; i++){
-    for (let i = 1; i <= 60; i++) {
-        for (let i = 0; i <= 60; i++) {
-            console.log("sec: " + i);
-        }
-        console.log("min: " + i);
-    }
-    console.log("hour: " + i);
-}
+// for( let hour = 0; hour <=2; hour++){
+//
+//     for (let min = 0; min <= 59 && (hour !== 3 && min !== 21); min++) {
+//
+//         for (let sec = 0; sec <= 59; sec++) {
+//
+//             console.log("sec: " + sec);
+//         }
+//         console.log("min: " + min);
+//     }
+//     console.log("hour: " + hour);
+// }
 
 
 
