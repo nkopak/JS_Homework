@@ -181,30 +181,91 @@ const arrCities = [
 //Task7--------------------------------------------------------------------------------------
 console.log("Task7--------------------------");
 // - Создать массив объектов cars и заполнить его машинами с полями модель, год выпуска, мощность, цвет, водитель. Водитель является отдельным объектом с полями имя, возраст, пол, стаж.
+const arrCarsWithDrivers = [
+    {model: 'civic', prodYear: 1998, power: 100, color: "blue", driver: {
+        name:123, age: 123, sex: 123, experience: 123
+        }},
+    {model: 'corolla', prodYear: 2003, power: 90, color: "grey", driver: {
+        name:123, age: 123, sex: 123, experience: 123
+        }},
+    {model: 'tavria', prodYear: 1991, power: 42, color: "red", driver: {
+        name:123, age: 123, sex: 123, experience: 123
+        }},
+    {model: 'mtz', prodYear: 1970, power: 8, color: "yellow", driver: {
+        name:123, age: 123, sex: 123, experience: 123
+        }},
+    {model: 'cx-5', prodYear: 2015, power: 180, color: "beige", driver: {
+        name:123, age: 123, sex: 123, experience: 123
+        }},
+    {model: 'land-cruiser', prodYear: 2008, power: 200, color: "black", driver: {
+        name:123, age: 123, sex: 123, experience: 123
+        }},
+    {model: 'almera', prodYear: 2010, power: 120, color: "white", driver: {
+        name:123, age: 123, sex: 123, experience: 123
+        }},
+    {model: 'duster', prodYear: 2012, power: 134, color: "green", driver: {
+        name:123, age: 123, sex: 123, experience: 123
+        }},
+    {model: 'charger', prodYear: 2016, power: 600, color: "pink", driver: {
+        name:123, age: 123, sex: 123, experience: 123
+        }},
+    {model: 'camry', prodYear: 2018, power: 250, color: "cyan", driver: {
+        name:123, age: 123, sex: 123, experience: 123
+        }},
+]
+
+
 
 //Task8--------------------------------------------------------------------------------------
 console.log("Task8--------------------------");
 // - проитерировать каждый массив из задания 5,6,7 при помощи while.
-let iTask8 = 0;
+let iCars = 0;
 
-while(iTask8 < arrCars.length){
-    console.log(arrCars[iTask8]);
-    iTask8++;
+while(iCars < arrCars.length){
+    console.log(arrCars[iCars]);
+    iCars++;
 }
 
+
+let iCities = 0;
+while(iCities < arrCities.length){
+    console.log(arrCities[iCities]);
+    iCities++;
+}
+
+let iCarsWithDrivers = 0;
+while(iCarsWithDrivers < arrCarsWithDrivers.length){
+    console.log(arrCarsWithDrivers[iCarsWithDrivers]);
+    iCarsWithDrivers++;
+}
 
 //Task9--------------------------------------------------------------------------------------
 console.log("Task9--------------------------");
 // - проитерировать каждый массив из задания 5,6,7 при помощи for .
 for (let i = 0; i < arrCars.length; i++) {
     console.log(arrCars[i]);
+}
 
+for (let i = 0; i < arrCities.length; i++) {
+    console.log(arrCities[i]);
+}
+
+for (let i = 0; i < arrCarsWithDrivers.length; i++) {
+    console.log(arrCarsWithDrivers[i]);
 }
 
 //Task10--------------------------------------------------------------------------------------
 console.log("Task10--------------------------");
 // - проитерировать каждый массив из задания 5,6,7 при помощи  for of.
 for (const element of arrCars) {
+    console.log(element);
+}
+
+for (const element of arrCities) {
+    console.log(element);
+}
+
+for (const element of arrCarsWithDrivers) {
     console.log(element);
 }
 
@@ -242,14 +303,29 @@ console.log(parse5);
 //Task13--------------------------------------------------------------------------------------
 console.log("Task13--------------------------");
 // - взять массив из задания 5,в цикле перебрать его объекты превратив их в json .
-// - взять массив из задания 6,в цикле перебрать его объекты превратив их в json .
+for (const element of arrCars) {
+    console.log(JSON.stringify(element));
+}
+
+//Task14--------------------------------------------------------------------------------------
+console.log("Task14--------------------------");
+// - взять массив из задания 6,в цикле перебрать его объекты превратив их в json.
+for (let i = 0; i < arrCities.length; i++) {
+    console.log(JSON.stringify(arrCities[i]));
+}
+
+
+//Task15--------------------------------------------------------------------------------------
+console.log("Task15--------------------------");
 // - взять массив из задания 7,в цикле перебрать его объекты превратив их в json и сразу скоприовать в новый массив.
+for (const element of arrCarsWithDrivers) {
+    console.log(JSON.stringify(element));
+}
+
+
+//Task16--------------------------------------------------------------------------------------
+console.log("Task16--------------------------");
 // - Создать массив пользователей. У каждого пользователя обязательно должено быть поле skills которое является массивом. Проитерировать массив пользователей и в каждом пользователе проитерировать его массив skills
-// - Создать массив пользователей. У каждого пользователя обязательно должено быть поле skills которое является массивом. Проитерировать массив пользователей и в каждом пользователе проитерировать его массив skills. Скопировать все skills всех пользователей в отедльный массив
-//
-
-
-// - За допомогою 2х циклів циклів проітеррувати  даний масив і масив кожного об'єкта.
 let users = [
     {name: 'vasya', age: 31, status: false, skills: ['java', 'js']},
     {name: 'petya', age: 30, status: true, skills: ['java', 'js', 'html']},
@@ -258,9 +334,49 @@ let users = [
     {name: 'max', age: 30, status: true, skills: ['mysql', ',mongo']}
     ];
 
-for(const value of users){
-    console.log(value);
+for (const element of users) {
+    console.log(element);
+}
+
+for (const element in users) {
+    console.log("Skills are: " + users[element].skills);
 }
 
 
+//Task17--------------------------------------------------------------------------------------
+console.log("Task17--------------------------");
+// - Создать массив пользователей. У каждого пользователя обязательно должено быть поле skills которое является массивом. Проитерировать массив пользователей и в каждом пользователе проитерировать его массив skills. Скопировать все skills всех пользователей в отедльный массив
+
+let arrSkills = [];
+
+for (let i = 0; i < users.length; i++) {
+    console.log(users[i]);
+}
+
+for (const element in users) {
+    console.log("Skills are: " + users[element].skills);
+    arrSkills.push(users[element].skills);
+}
+
+console.log(arrSkills);
+
+
+//Task18--------------------------------------------------------------------------------------
+console.log("Task18--------------------------");
+// - За допомогою 2х циклів циклів проітеррувати  даний масив і масив кожного об'єкта.
+// let users = [
+//     {name: 'vasya', age: 31, status: false, skills: ['java', 'js']},
+//     {name: 'petya', age: 30, status: true, skills: ['java', 'js', 'html']},
+//     {name: 'kolya', age: 29, status: true, skills: ['mysql', ',mongo']},
+//     {name: 'olya', age: 28, status: false, skills: ['java', 'js']},
+//     {name: 'max', age: 30, status: true, skills: ['mysql', ',mongo']}
+//     ];
+//
+for(const element of users){
+    console.log(element);
+}
+
+for(const element of users){
+    console.log(element.skills);
+}
 
