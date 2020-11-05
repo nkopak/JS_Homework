@@ -1,7 +1,6 @@
 // Взяти файл template_2.html та працювати в ньому
 // - Напишіть код, який :
 
-
 // //Task1--------------------------------------------------------------------------------------
 // // console.log("Task1--------------------------");
 // // -- змінює колір тексту елемнту з ід main_header на будь-який інший
@@ -58,11 +57,11 @@
 
 //Task8--------------------------------------------------------------------------------------
 // -- отримує всі елементи 'a' та додає їм клас element_XXX. Де XXX - текстовий контент елементу a
-let elemTask8 = document.getElementsByTagName("a");
-for (let i = 0; i < elemTask8.length; i++) {
-        elemTask8[i].classList.add("element_"+ elemTask8[i].innerText);
+// let elemTask8 = document.getElementsByTagName("a");
+// for (let i = 0; i < elemTask8.length; i++) {
+//         elemTask8[i].classList.add("element_"+ elemTask8[i].innerText);
 
-}
+// }
 
 // //Task9--------------------------------------------------------------------------------------
 // // -- отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()

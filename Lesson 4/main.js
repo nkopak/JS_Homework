@@ -2,7 +2,8 @@
 console.log("Task1--------------------------");
 // - створити функцію яка виводить масив
 
-let newArr = function (){
+
+let newArr = function (array){
     let arr = [123, "cat", false];
     console.log(arr);
 }
