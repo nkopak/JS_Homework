@@ -117,7 +117,7 @@ document.write("<br>");
 //Дан масив ['js', 'css', 'jq']. Виведіть на екран перший елемент за допомогою shift()
 
 const arrTask29 = ['js', 'css', 'jq'];
-const firstElem = arrTask29.shift([0]);
+const firstElem = arrTask29.shift();
 
 document.write("<h1>First element is: " + firstElem + "</h1>");
 
@@ -128,7 +128,7 @@ document.write("<br>");
 //Дан масив ['js', 'css', 'jq']. Виведіть на екран останній елемент за допомогою pop()
 
 const arrTask30 = ['js', 'css', 'jq'];
-const lastElem = arrTask30.pop([arrTask30.length-1]);
+const lastElem = arrTask30.pop();
 
 document.write("<h1>Last element is: " + lastElem + "</h1>");
 

@@ -318,9 +318,12 @@ for (let i = 0; i < arrCities.length; i++) {
 //Task15--------------------------------------------------------------------------------------
 console.log("Task15--------------------------");
 // - взять массив из задания 7,в цикле перебрать его объекты превратив их в json и сразу скоприовать в новый массив.
+
+arrJson = [];
 for (const element of arrCarsWithDrivers) {
-    console.log(JSON.stringify(element));
+    arrJson.push(JSON.stringify(element));
 }
+console.log(arrJson);
 
 
 //Task16--------------------------------------------------------------------------------------
@@ -334,12 +337,11 @@ let users = [
     {name: 'max', age: 30, status: true, skills: ['mysql', ',mongo']}
     ];
 
-for (const element of users) {
-    console.log(element);
-}
-
-for (const element in users) {
-    console.log("Skills are: " + users[element].skills);
+for (const user of users) {
+    console.log(user);
+    for (const skill of user.skills) {
+        console.log("Skills are: " + skill);
+    }
 }
 
 
@@ -349,14 +351,17 @@ console.log("Task17--------------------------");
 
 let arrSkills = [];
 
-for (let i = 0; i < users.length; i++) {
-    console.log(users[i]);
+for (const user of users) {
+    for (const skill of user.skills) {
+        console.log("Skills are: " + skill);
+        arrSkills.push(skill);
+    }
 }
 
-for (const element in users) {
-    console.log("Skills are: " + users[element].skills);
-    arrSkills.push(users[element].skills);
-}
+// for (const element in users) {
+//     console.log("Skills are: " + users[element].skills);
+//     arrSkills.push(users[element].skills);
+// }
 
 console.log(arrSkills);
 
@@ -450,21 +455,202 @@ console.log(arrAddress);
 //Task20--------------------------------------------------------------------------------------
 console.log("Task20--------------------------");
 // - За допомоги циклу проітерувати  масив users2, записати кожного юзера в сівй блок за допомоги document.createElement. Всі данні в одному блоці.
-for (const element of users2) {
+// for (const element of users2) {
+//
+//     let userDiv = document.createElement('div');
+//     document.body.appendChild(userDiv);
+//     userDiv.innerText = `${element.name} ${element.age} ${element.status} ${element.address.city} ${element.address.country} ${element.address.street} ${element.address.houseNumber}`;
+//
+//     userDiv.style.backgroundColor = "beige";
+//     userDiv.style.width = "fit-content";
+//     userDiv.style.height = "fit-content";
+//     userDiv.style.margin = "20px";
+// }
 
-    let userDiv = document.createElement('div');
-
-}
-
-let div = document.createElement('p');
-div.style.width = "200px";
-div.style.height = "200px";
-div.style.backgroundColor = "red";
-console.log(div);
-div.innerHTML = '<h3>' + +'</h3>'
 
 
-// - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
+//Task21--------------------------------------------------------------------------------------
+console.log("Task21--------------------------");
+// - За допомоги циклу проітерувати  масив users, записати кожного юзера в свій блок за допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
+
+// for (const element of users2) {
+//
+//     let userDiv = document.createElement('div');
+//     let userName = document.createElement('div');
+//     let userAge = document.createElement('div');
+//     let userStatus = document.createElement('div');
+//     let userAddress = document.createElement('div');
+//
+//     userName.innerText = `${element.name}`;
+//     userAge.innerText = `${element.age}`;
+//     userStatus.innerText = `${element.status}`;
+//     userAddress.innerText = JSON.stringify(element.address);
+//
+//     userDiv.style.backgroundColor = "beige";
+//     userDiv.style.width = "fit-content";
+//     userDiv.style.height = "fit-content";
+//     userDiv.style.margin = "20px";
+//
+//     userDiv.appendChild(userName);
+//     userDiv.appendChild(userAge);
+//     userDiv.appendChild(userStatus);
+//     userDiv.appendChild(userAddress);
+//     document.body.appendChild(userDiv);
+// }
+
+
+//Task22--------------------------------------------------------------------------------------
+console.log("Task22--------------------------");
 // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам , блок з адресою зробити окремим блоком, з блоками для кожної властивості
+//
+// for (const element of users2) {
+//
+//     let userDiv = document.createElement('div');
+//     let userName = document.createElement('div');
+//     let userAge = document.createElement('div');
+//     let userStatus = document.createElement('div');
+//     let userAddress = document.createElement('div');
+//     let addressCity = document.createElement('div')
+//     let addressCountry = document.createElement('div')
+//     let addressStreet = document.createElement('div')
+//     let addressHouseNumber = document.createElement('div')
+
+
+    //// let address = "";
+    //// for (const arrItem of users2) {
+    ////     for (const objItem in arrItem) {
+    ////         address = objItem;
+    ////     }
+    //// }
+    //// console.log(address);
+
+//     userName.innerText = `${element.name}`;
+//     userAge.innerText = `${element.age}`;
+//     userStatus.innerText = `${element.status}`;
+//     addressCity.innerText = JSON.stringify(element.address.city);
+//     addressCountry.innerText = JSON.stringify(element.address.country);
+//     addressStreet.innerText = JSON.stringify(element.address.street);
+//     addressHouseNumber.innerText = JSON.stringify(element.address.houseNumber);
+//
+//     userDiv.style.backgroundColor = "beige";
+//     userAddress.style.backgroundColor = "orange";
+//     userDiv.style.width = "fit-content";
+//     userDiv.style.height = "fit-content";
+//     userDiv.style.margin = "20px";
+//
+//
+//     userAddress.appendChild(addressCity);
+//     userAddress.appendChild(addressCountry);
+//     userAddress.appendChild(addressStreet);
+//     userAddress.appendChild(addressHouseNumber);
+//     userDiv.appendChild(userName);
+//     userDiv.appendChild(userAge);
+//     userDiv.appendChild(userStatus);
+//     userDiv.appendChild(userAddress);
+//     document.body.appendChild(userDiv);
+// }
+
+
+//Task23--------------------------------------------------------------------------------------
+console.log("Task23--------------------------");
+// - Дано 2 масиви з рівною кількістю об'єктів.
+// Масиви:
+let usersWithId = [
+    {id: 1, name: 'vasya', age: 31, status: false},
+    {id: 2, name: 'petya', age: 30, status: true},
+    {id: 3, name: 'kolya', age: 29, status: true},
+    {id: 4, name: 'olya', age: 28, status: false},
+];
+
+let citiesWithId = [
+    {user_id: 3, country: 'USA', city: 'Portland'},
+    {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+    {user_id: 2, country: 'Poland', city: 'Krakow'},
+    {user_id: 4, country: 'USA', city: 'Miami'},
+];
+
+// З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
+//     Записати цей об'єкт в новий масив
+// Частковий приклад реультату:
+// let usersWithCities = [{id: 1, name: 'vasya', age: 31, status: false, address: {user_id: 1, country: 'Ukraine', city: 'Ternopil'}}....]
+
+// let usersWithCities = [];
+// for (let userElem of usersWithId) {
+//     for (let i = 0; i < citiesWithId.length; i++) {
+//         if(userElem.id === citiesWithId[i].user_id){
+//             const address = citiesWithId[i];
+//             userElem.address = address;
+//         }
+//     }
+//     usersWithCities.push(userElem);
+// }
+//
+// console.log(usersWithCities);
+
+
+//Task23--------------------------------------------------------------------------------------
+console.log("Task23--------------------------");
+// - створити розмітці блок з id, class та текстом в середені. Зчитати окремо цей текст з селекторів по id , class та тегу
+// let idText = document.getElementById('wrap');
+// console.log(idText.textContent);
+
+// let classText = document.getElementsByClassName('rules');
+// for (const element of classText) {
+//     console.log(element.textContent);
+// }
+
+// let divText = document.getElementsByTagName('div');
+// for (const element of divText) {
+//     console.log(element.textContent);
+// }
+
+
+//Task24--------------------------------------------------------------------------------------
+console.log("Task24--------------------------");
+// - змінити цей текст використовуючи селектори id, class,  tag
+// - змінити висоту та ширину блоку використовуючи селектори id, class,  tag
+// let idText = document.getElementById('wrap');
+// idText.innerText = 'lorem';
+// idText.style.width = "400px";
+// idText.style.height = "400px";
+//
+// let classText = document.getElementsByClassName('rules');
+// for (const element of classText) {
+//     element.innerText = 'lorem';
+//     element.style.width = "400px";
+//     element.style.height = "100px";
+// }
+
+// let divText = document.getElementsByTagName('h2');
+// for (const element of divText) {
+//     element.innerText = 'lorem';
+//     element.style.width = "400px";
+//     element.style.height = "100px";
+// }
+
+
+// - за допомоги document.createElement та appendChild створити таблицю на 1 рядок з трьома ячейками всередені
+// - за допомоги document.createElement, appendChild та циклу створити таблицю на 10 рядків з трьома ячейками всередені
+// - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на 10 рядків з 5 ячейками всередені
+// - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків з m ячейками всередені. n та m отримати з prompt
+//
+// --Завантажити з мережі будь-який шаблон сайту. Підключити до нього свій скріпт-файл. У файлі прописати наступні доступи та дії
+// - знайти всі елементі, які мають class
+// - знайти всі параграфи ,та змінити текст на hello oktenweb!
+// - знайти всі div та змінити ім колір на червоний
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
