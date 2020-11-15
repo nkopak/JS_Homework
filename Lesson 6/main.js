@@ -146,6 +146,9 @@
 // console.log(sort);
 
 // -- наисать функцию калькулятора с 2мя числами и колбеком
+
+
+
 // -- наисать функцию калькулятора с 3мя числами и колбеком
 
 
@@ -385,18 +388,70 @@
 // ===========================
 //Task6-------------------------------------------------------------------------------
 // Створити обєкт автомобіля з полями:
-//     Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
-//     Власник автомобіля теж має бути обєкт, у якого є поля
-// Імя, вік, стаж водіння.
-//     Створити не менше 7 та не більше 20 машинок.
+//     +Марка автомобля, рік випуску, потужність двигуна, власник, ціна, .
+//     +Власник автомобіля теж має бути обєкт, у якого є поля Імя, вік, стаж водіння.
+//     +Створити не менше 7 та не більше 20 машинок.
+//     +Для початку вкладіть всі наші створені автомобілі в масив cars.
+//
+
+
+//
+// const rootCars = [
+//     {model: 'civic', prodYear: 1998, power: 100, owner: {name: 'Anna', age: 32, exp: 7}, price: 8000},
+//     {model: 'corolla', prodYear: 2003, power: 90, owner: {name: 'Victor', age: 28, exp: 5}, price: 8500},
+//     {model: 'tavria', prodYear: 1991, power: 42, owner: {name: 'Nazar', age: 19, exp: 1}, price: 800},
+//     {model: 'mtz', prodYear: 1970, power: 8, owner: {name: 'Mykola', age: 58, exp: 35}, price: 5000},
+//     {model: 'cx-5', prodYear: 2015, power: 180, owner: {name: 'Volodymyr', age: 24, exp: 4}, price: 17500},
+//     {model: 'land-cruiser', prodYear: 2008, power: 200, owner: {name: 'Roman', age: 42, exp: 1}, price: 26300},
+//     {model: 'almera', prodYear: 2010, power: 120, owner: {name: 'Ihor', age: 26, exp: 7}, price: 6550},
+//     {model: 'duster', prodYear: 2012, power: 134, owner: {name: 'Vasyl', age: 28, exp: 1}, price: 10500},
+//     {model: 'charger', prodYear: 2016, power: 600, owner: {name: 'Nestor', age: 34, exp: 4}, price: 48750},
+//     {model: 'camry', prodYear: 2018, power: 250, owner: {name: 'Oleksandr', age: 38, exp: 20}, price: 36500},
+// ]
+//
+// let cars = JSON.parse(JSON.stringify(rootCars));
+
 //     Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
-// На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
-// Для початку вкладіть всі наші створені автомобілі в масив cars.
-//     Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+// Далі необхідно обрати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+// function carsRepair(arr){
+//     for (let i = 0; i < arr.length; i += 2) {
+//         const car = arr[i];
+//         car.repair = true;
+//         car.price *= 1.05;
+//         car.power *= 1.1;
+//         console.log(`${car.model} new power is ${car.power}, and new price is ${car.price} $`);
+//     }
+// }
+// carsRepair(cars);
+
+//     На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
+// function newDrivers(){
+//     // let newOwners = ['Orest','Oleh','Bohdan','Andrii','Yurii'];
+//     for (const car of cars) {
+//         if(car.repair){
+//             car.owner = arguments;
+//             console.log(car);
+//         }
+//     }
+// }
+// newDrivers('Orest','mykola','serhii');
+
+
 // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
+// let driversTest = cars.forEach(value => {
+//     if (value.owner.exp < 5 && value.owner.age > 25) {
+//         value.owner.exp += 1;
+//         console.log(`${value.owner.name} took 1 year courses and now he is more experienced!`);
+//     }
+// })
+
 //     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
-//
-//
+// let carsPrice = cars.reduce((acc,value)=>{
+//     return acc + value.price
+// },0);
+// console.log(`Overall car price is ${carsPrice}`);
+
+
 // Задача: дан отсортированный по возрастанию массив целых чисел. Необходимо вернуть наименьший и наибольший индекс заданного элемента.
 //     Входные данные: arr — массив целых чисел значения которых по модулю не больше 10. Размер массива не более 10 элементов.
 //     Вывод: наибольший и наименьший индекс в массиве заданного элемента. Если такого элемента нет в массиве, выведите -1.
@@ -407,3 +462,28 @@
 // Answer: MinIndex = 0, MaxIndex = 0.
 // 2. Key = 4
 // Answer: MinIndex = 3, MaxIndex = 6.
+// let arr = [1, 2, 3, 5, 5, 5, 5, 7, 9, 9, 9];
+//
+// let minIndex = undefined;
+// let maxIndex = undefined;
+//
+// function minMaxIndex(array, element) {
+//     // debugger
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] === element) {
+//             if (minIndex === undefined) {
+//                 minIndex = i;
+//             } else {
+//                 maxIndex = i;
+//             }
+//
+//         }
+//     }
+//     if (minIndex && maxIndex) {
+//         console.log(`Answer: MinIndex = ${minIndex}, MaxIndex = ${maxIndex}.`);
+//     } else {
+//         console.log(-1);
+//     }
+// }
+//
+// minMaxIndex(arr, 9);
