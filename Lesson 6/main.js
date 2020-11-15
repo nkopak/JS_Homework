@@ -146,10 +146,23 @@
 // console.log(sort);
 
 // -- наисать функцию калькулятора с 2мя числами и колбеком
-
-
+// function calc(a, b, callback) {
+//     callback(a, b)
+// }
+// calc(1, 2, (a, b) => {
+//         console.log(a + b);
+//     }
+// )
+// calc(504,21,(a,b)=>{
+//     console.log(a / b);})
 
 // -- наисать функцию калькулятора с 3мя числами и колбеком
+// function calc(a,b,c,callback){
+//     callback(a,b,c)
+// }
+// calc(4,8,15.5,(a,b,c)=>{
+//     console.log(a * b + c);
+// })
 
 
 
@@ -428,13 +441,13 @@
 // function newDrivers(){
 //     // let newOwners = ['Orest','Oleh','Bohdan','Andrii','Yurii'];
 //     for (const car of cars) {
-//         if(car.repair){
-//             car.owner = arguments;
-//             console.log(car);
-//         }
-//     }
+//         if(car.repair){                                           ??????
+//             car.owner = arguments;                              ??     ???
+//             console.log(car);                                    ??    ???
+//         }                                                             ??
+//     }                                                                ??
 // }
-// newDrivers('Orest','mykola','serhii');
+// newDrivers('Orest','mykola','serhii');                               ??
 
 
 // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
