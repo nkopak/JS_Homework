@@ -13,28 +13,44 @@
 <!--<textarea id="text" name="text"-->
 <!--          rows="5" cols="33">-->
 <!--</textarea>-->
-
-<form id="form">
-    <label for="input">Type here</label>
+<!--==============================================================================================-->
+<form id="form" name="form" oninput="saveForm(this)">
+    <label for="input">Type name here</label>
     <input id="input">
     <br>
-    <label for="check">Select</label>
-    <input type="checkbox" id="check">Pop
-    <input type="checkbox">Rock
-    <input type="checkbox">Jazz
+
+    <label for="check1">Select music:</label>
+    <input type="checkbox" value="Pop" class="check" id="check1">Pop
+    <input type="checkbox" value="Rock" class="check" id="check2">Rock
+    <input type="checkbox" value="Jazz" class="check" id="check3">Jazz
+    <input type="checkbox" value="Hip-Hop" class="check" id="check4">Hip-Hop
     <br>
-    <label for="rad">Select</label>
-    <input type="radio" name="sex" id="rad">Boy
-    <input type="radio" name="sex" >Girl
+
+    <label for="radio1">Adult?</label>
+    <input type="radio" name="age" value="Yes" id="radio1" class="rad">Yes
+    <input type="radio" name="age" value="No"  id="radio2" class="rad">No
     <br>
+
+    <label for="select">Rank:</label>
     <select id="select">
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
+        <option>Trainee</option>
+        <option>Junior</option>
+        <option>Middle</option>
     </select>
+    <br>
+    <textarea id="textarea" rows="5" cols="33">
+
+    </textarea>
 </form>
+==============================================================================================
+<!--    <button id="prev">Previous</button>-->
+<!--    <button id="next">Next</button>-->
+<!--    <br>-->
+<!--    <textarea id="textarea" rows="5" cols="33">-->
 
-
+<!--    </textarea>-->
+<!--    <br>-->
+<!--    <button id="btn">Save</button>-->
 
 
 <script src="main.js"></script>
