@@ -1,10 +1,25 @@
-// - Создать произвольный елемент с id = text.  Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал элемент с id="text".
+// - Создать произвольный елемент с id = text.  Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал
+// элемент с id="text".
+// let div = document.createElement('div');
+// div.setAttribute('id', 'text');
+// document.body.appendChild(div);
+//
 // let text = document.getElementById('text');
+// text.style.backgroundColor ='green';
+// text.style.width ='300px';
+// text.style.height ='100px';
+//
+// let button = document.createElement('button');
+// button.setAttribute('id', 'btn');
+// button.innerText = 'Click!';
+// document.body.appendChild(button);
+//
 // let btn = document.getElementById('btn');
 // let click = btn.addEventListener('click', (ev => {
 //     text.style.display = 'none';
 // }));
 
+//=======================================================================================================================
 //- Создайте кнопку, при клике на которую, она будет скрывать сама себя.
 // let btn = document.createElement('button');
 // btn.innerText = ('button');
@@ -13,7 +28,9 @@
 //     btn.style.display = 'none';
 // }));
 
-// - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+//=======================================================================================================================
+// - створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+// При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
 
 // const forms = document.createElement('form');
 // forms.setAttribute('name','form');
@@ -38,14 +55,13 @@
 //     }
 // })
 
-
+//=======================================================================================================================
 // // - Создайте меню, которое раскрывается/сворачивается при клике
 // let menuLogo = document.createElement('h1');
 // menuLogo.innerText = 'Menu';
 // document.body.appendChild(menuLogo);
 //
 // let menuDiv = document.createElement('div');
-// menuDiv.classList.add('menu');
 // document.body.appendChild(menuDiv);
 //
 // let ul = document.createElement('ul');
@@ -64,34 +80,62 @@
 // ul.appendChild(li3);
 //
 // menuLogo.addEventListener('click',ev => {
-//     menu.classList.toggle('menu');
-//     // if(menuDiv.style.display === 'none'){
-//     //     menuLogo.addEventListener('click',ev => {
-//     //         menuDiv.style.display = 'block';
-//     //     })
-//     // }
+//     menuDiv.classList.toggle('hidden');
 // })
-
+//=======================================================================================================================
 // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
 //     Вывести список комментариев в документ, каждый в своем блоке.
 //     Добавьте каждому комментарию по кнопке для сворачивания его body.
+// let comments = [
+//     {title : 'lorem', body:'lorem ipsum dolo sit ameti'},
+//     {title : 'lorem', body:'lorem ipsum dolo sit ameti'},
+//     {title : 'lorem', body:'lorem ipsum dolo sit ameti'},
+//     {title : 'lorem', body:'lorem ipsum dolo sit ameti'},
+//     {title : 'lorem', body:'lorem ipsum dolo sit ameti'},
+//     {title : 'lorem', body:'lorem ipsum dolo sit ameti'}
+// ]
+// for (const elem of comments) {
+//     let div = document.createElement('div');
+//     document.body.appendChild(div);
 //
+//     // let comTitle = elem.title;
+//     // let comBody = elem.body;
+//     // let comment = `${comTitle} : ${comBody}`
+//     let title = document.createElement('h3');
+//     title.innerText = elem.title;
+//     div.appendChild(title);
+//
+//     let body = document.createElement('h4');
+//     body.innerText = elem.body;
+//     div.appendChild(body);
+//
+//     let button = document.createElement('button');
+//     button.innerText = 'Hide';
+//     div.appendChild(button);
+//
+//     button.addEventListener('click',ev => {
+//         body.classList.toggle('hidden');
+//     })
+// }
+//=======================================================================================================================
 // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на консоль інформація з цих 2х форм.
 //     Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
 // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
 // let form1 = document.createElement('form');
+// form1.setAttribute('id','form');
 // document.body.appendChild(form1);
 //
 // let input1 = document.createElement('input');
 // input1.setAttribute('placeholder','Name');
-// input1.setAttribute('name','name');
+// input1.setAttribute('id','name');
 // form1.appendChild(input1);
+// let name = document.forms.form.name;
+//
 //
 // let input2 = document.createElement('input');
 // input2.setAttribute('placeholder','Surname');
 // input2.setAttribute('name','Surname');
 // form1.appendChild(input2);
-//
 //
 //
 // let form2 = document.createElement('form');
@@ -108,10 +152,10 @@
 // let btn = document.createElement('button');
 // document.body.appendChild(btn);
 // btn.innerText = "Submit";
-
-
-
-
+//
+// btn.addEventListener('click',ev => {
+//     console.log(`${input1.value} ${input2.value} ${input3.value} ${input4.value}`);
+// })
 
 // - Створити функцію, яка генерує таблицю.
 //     Перший аргумент визначає кількість строк.
