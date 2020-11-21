@@ -81,11 +81,12 @@
 //
 // next.addEventListener('click',()=>{
 //     let nextI = ++infoArr.length;
-//     textarea.value = JSON.parse(localStorage.getItem(`text ${nextI}`));
-//     console.log(textarea.value);
 //     if(nextI = infoArr.length){
 //         nextI = infoArr.length
 //     }
+//     textarea.value = JSON.parse(localStorage.getItem(`text ${nextI}`));
+//     console.log(textarea.value);
+//
 // })
 //
 // textarea.value = JSON.parse(localStorage.getItem(`text ${infoArr.length}`));
@@ -94,7 +95,25 @@
 //     Данные которые надо сохранять : ФИО, номер, почта, фирма, отдел, день рождения
 // Данные вводить через соответсвующую форму.
 // --Каждому контакту добавить кнопку для удаления контакта.
+
 // --Каждому контакту добавить кнопку редактироваиня. При нажати на нее появляется форма, в которой есть все необходимые инпуты для редактирования, которые уже заполнены данными объекта
 
 
 
+function setData(tag){
+    let name = document.querySelector('#name');
+    for (const elem of tag) {
+        localStorage.setItem(elem.id, elem.value)
+    }
+}
+
+function getData(tag){
+    let field = document.querySelector('.field')
+    let showUser = document.querySelector('#show');
+    if (showUser.value === localStorage.getItem('name')){
+        for (let i = 0; i < localStorage.length; i++) {
+            let elem = localStorage.getItem(localStorage.key(i));
+            field.innerHTML = `${localStorage.key(i)} ${elem}`;
+        }
+    }
+}

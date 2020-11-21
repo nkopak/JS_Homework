@@ -2,47 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
     <style>
-        *{
-            margin: 10px 5px;
+        #form{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .input{
+            margin: 5px;
         }
     </style>
+
+    <title>Title</title>
+
 </head>
 <body>
 <!--<textarea id="text" name="text"-->
 <!--          rows="5" cols="33">-->
 <!--</textarea>-->
 <!--==============================================================================================-->
-<form id="form" name="form" oninput="saveForm(this)">
-    <label for="input">Type name here</label>
-    <input id="input">
-    <br>
+<!--<form id="form" name="form" oninput="saveForm(this)">-->
+<!--    <label for="input">Type name here</label>-->
+<!--    <input id="input">-->
+<!--    <br>-->
 
-    <label for="check1">Select music:</label>
-    <input type="checkbox" value="Pop" class="check" id="check1">Pop
-    <input type="checkbox" value="Rock" class="check" id="check2">Rock
-    <input type="checkbox" value="Jazz" class="check" id="check3">Jazz
-    <input type="checkbox" value="Hip-Hop" class="check" id="check4">Hip-Hop
-    <br>
+<!--    <label for="check1">Select music:</label>-->
+<!--    <input type="checkbox" value="Pop" class="check" id="check1">Pop-->
+<!--    <input type="checkbox" value="Rock" class="check" id="check2">Rock-->
+<!--    <input type="checkbox" value="Jazz" class="check" id="check3">Jazz-->
+<!--    <input type="checkbox" value="Hip-Hop" class="check" id="check4">Hip-Hop-->
+<!--    <br>-->
 
-    <label for="radio1">Adult?</label>
-    <input type="radio" name="age" value="Yes" id="radio1" class="rad">Yes
-    <input type="radio" name="age" value="No"  id="radio2" class="rad">No
-    <br>
+<!--    <label for="radio1">Adult?</label>-->
+<!--    <input type="radio" name="age" value="Yes" id="radio1" class="rad">Yes-->
+<!--    <input type="radio" name="age" value="No"  id="radio2" class="rad">No-->
+<!--    <br>-->
 
-    <label for="select">Rank:</label>
-    <select id="select">
-        <option>Trainee</option>
-        <option>Junior</option>
-        <option>Middle</option>
-    </select>
-    <br>
-    <textarea id="textarea" rows="5" cols="33">
+<!--    <label for="select">Rank:</label>-->
+<!--    <select id="select">-->
+<!--        <option>Trainee</option>-->
+<!--        <option>Junior</option>-->
+<!--        <option>Middle</option>-->
+<!--    </select>-->
+<!--    <br>-->
+<!--    <textarea id="textarea" rows="5" cols="33">-->
 
-    </textarea>
-</form>
-==============================================================================================
+<!--    </textarea>-->
+<!--</form>-->
+<!--==============================================================================================-->
 <!--    <button id="prev">Previous</button>-->
 <!--    <button id="next">Next</button>-->
 <!--    <br>-->
@@ -51,7 +58,36 @@
 <!--    </textarea>-->
 <!--    <br>-->
 <!--    <button id="btn">Save</button>-->
+<!--==============================================================================================-->
 
+<form id="form" oninput="setData(this)">
+    <label for="name" class="input">Full name:</label>
+    <input type="text" id="name">
+
+    <label for="phone" class="input">Phone number:</label>
+    <input type="text" id="phone">
+
+    <label for="email" class="input">E-mail:</label>
+    <input type="text" id="email">
+
+    <label for="firm" class="input">Firm:</label>
+    <input type="text" id="firm">
+
+    <label for="department" class="input">Department:</label>
+    <input type="text" id="department">
+
+    <label for="birthday" class="input">Birth date:</label>
+    <input type="date" id="birthday">
+</form>
+
+<label for="show">Find user:</label>
+<input type="text" id="show" oninput="getData(this)">
+
+<fieldset class="field">
+    <legend>User info</legend>
+</fieldset>
+
+<!--<img src="SONATA-hero-option1-764A5360-edit-640x354.jpg">-->
 
 <script src="main.js"></script>
 </body>
