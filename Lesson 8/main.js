@@ -141,31 +141,115 @@
 // --Каждому контакту добавить кнопку для удаления контакта.
 
 // --Каждому контакту добавить кнопку редактироваиня. При нажати на нее появляется форма, в которой есть все необходимые инпуты для редактирования, которые уже заполнены данными объекта
-let name = document.querySelector('#name');
-let field = document.querySelector('.field')
-let showUser = document.querySelector('#show');
-let clear = document.querySelector('#clear');
 
-function setData(tag){
-    for (const elem of tag) {
-        localStorage.setItem(elem.id, elem.value)
-    }
-}
+// let tempUser = {};
+// let content = document.querySelector('#content');
+// let saveUser = document.querySelector('#save');
+// let form = document.querySelector('#form1');
+//
+// let user_arr = 'user_arr';
+// let allContacts = [];
+//
+// saveUser.addEventListener('click', () => {
+//     let contact = {...tempUser};
+//     for (const item of form.children) {
+//         if (item.id && item.type !== 'submit') {
+//             contact[item.id] = item.value;
+//         }
+//     }
+//     allContacts.push(contact);
+//     console.log(contact);
+//     console.log(allContacts);
+//     saveToLS(contact);
+// })
+// getFromLS()
+//
+// function saveToLS(user) {
+//     if (localStorage.hasOwnProperty(user_arr)) {
+//         let arrayUsers = JSON.parse(localStorage.getItem(user_arr));
+//         console.log(arrayUsers);
+//         let findUser = arrayUsers.find(value => value.phone === user.phone)
+//         if (findUser) {
+//
+//             let filter = arrayUsers.filter(value => value.phone !== user.phone)
+//             filter.push(user);
+//
+//             localStorage.setItem(user_arr, JSON.stringify(filter))
+//         } else {
+//             arrayUsers.push(user);
+//             localStorage.setItem(user_arr, JSON.stringify(arrayUsers))
+//         }
+//     } else {
+//         localStorage.setItem(user_arr, JSON.stringify([user]))
+//     }
+// }
+//
+// function getFromLS() {
+//     if (localStorage.hasOwnProperty(user_arr)) {
+//         let arrayUsers = JSON.parse(localStorage.getItem(user_arr))
+//         for (const user of arrayUsers) {
+//             content.appendChild(createDivUserInfo(user));
+//         }
+//     }
+// }
+//
+// function createDivUserInfo(user) {
+//     let infoBlock = document.createElement('fieldset');
+//     let flag = true;
+//     for (const key in user) {
+//         if (flag) {
+//             let header = document.createElement('h4');
+//             header.innerText = `${key}: ${user[key]}`;
+//             infoBlock.appendChild(header);
+//             flag = false
+//         } else {
+//             let p = document.createElement('p');
+//             p.innerText = `${key}: ${user[key]}`;
+//             infoBlock.appendChild(p);
+//         }
+//     }
+//     infoBlock.style = 'float: left';
+//     let editBtn = document.createElement('button');
+//     let deleteBtn = document.createElement('button');
+//
+//     editBtn.innerText = 'Edit';
+//     editBtn.addEventListener('click', () => {
+//         editContact(user.phone);
+//     });
+//
+//     deleteBtn.innerText = 'Delete';
+//     deleteBtn.addEventListener('click', () => {
+//         deleteContact(user.phone);
+//     })
+//
+//
+//     infoBlock.appendChild(editBtn);
+//     infoBlock.appendChild(deleteBtn);
+//     return infoBlock;
+// }
+//
+// function deleteContact(phone) {
+//     let arr = JSON.parse(localStorage.getItem(user_arr));
+//     let filter = arr.filter(user => user.phone !== phone);
+//     localStorage.setItem(user_arr, JSON.stringify(filter));
+//     location.reload();
+// }
+//
+// function editContact(phone) {
+//     let arr = JSON.parse(localStorage.getItem(user_arr));
+//     let user = arr.find(user => user.phone === phone);
+//     for (const item of form.children) {
+//         if (item.id && item.type !== 'submit') {
+//             for (const key in user) {
+//                 if (item.id === key) {
+//                     item.value = user[key];
+//                 }
+//             }
+//         }
+//     }
+//     tempUser = user;
+// }
 
-
-function getData(tag){
-    if (showUser.value === localStorage.getItem('name')){
-        for (let i = 0; i < localStorage.length; i++) {
-            let elem = localStorage.getItem(localStorage.key(i));
-            let item = document.createElement('p')
-            field.appendChild(item);
-            item.innerHTML = `${localStorage.key(i)} ${elem}`;
-        }
-    }
-    clear.addEventListener('click', ()=>{
-        field.style.visibility = 'hidden';
-    })
-}
 
 
 
