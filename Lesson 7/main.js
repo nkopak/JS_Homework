@@ -122,54 +122,132 @@
 //     Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
 // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
 // let form1 = document.createElement('form');
-// form1.setAttribute('id','form');
+// form1.setAttribute('name','form1');
 // document.body.appendChild(form1);
 //
 // let input1 = document.createElement('input');
 // input1.setAttribute('placeholder','Name');
-// input1.setAttribute('id','name');
+// input1.setAttribute('value','');
+// input1.setAttribute('name','name');
 // form1.appendChild(input1);
-// let name = document.forms.form.name;
-//
+// let formFirst = document.forms.form1;
+// let name = formFirst.name;
 //
 // let input2 = document.createElement('input');
 // input2.setAttribute('placeholder','Surname');
-// input2.setAttribute('name','Surname');
+// input2.setAttribute('value','');
+// input2.setAttribute('name','surname');
 // form1.appendChild(input2);
-//
+// let surname = formFirst.surname;
 //
 // let form2 = document.createElement('form');
+// form2.setAttribute('name','form2');
 // document.body.appendChild(form2);
 //
 // let input3 = document.createElement('input');
 // input3.setAttribute('placeholder','City');
+// input3.setAttribute('value','');
+// input3.setAttribute('name','city');
 // form2.appendChild(input3);
+// let formSecond = document.forms.form2;
+// let city = formSecond.city;
 //
 // let input4 = document.createElement('input');
 // input4.setAttribute('placeholder','Age');
+// input4.setAttribute('value','');
+// input4.setAttribute('name','age');
 // form2.appendChild(input4);
+// let age = formSecond.age;
 //
 // let btn = document.createElement('button');
 // document.body.appendChild(btn);
 // btn.innerText = "Submit";
 //
 // btn.addEventListener('click',ev => {
-//     console.log(`${input1.value} ${input2.value} ${input3.value} ${input4.value}`);
+//     console.log(`${name.value} ${surname.value} ${city.value} ${age.value}`);
 // })
+
 
 // - Створити функцію, яка генерує таблицю.
 //     Перший аргумент визначає кількість строк.
 //     Другий параметр визначає кліькіть ячеєк в кожній строці.
 //     Третій параметр визначає елемент в який потрібно таблицю додати.
+
+// function table(tr, td, elem){
+//     let table = document.createElement('table');
+//     document.body.appendChild(table);
+//     table.style.border = '1px solid black';
 //
+//     for (let i = 0; i < tr; i++) {
+//         let tr = document.createElement('tr');
+//         table.appendChild(tr);
+//         tr.style.border = '1px solid black';
+//         for (let j = 0; j < td; j++) {
+//             let td = document.createElement('td');
+//             tr.appendChild(td);
+//             td.style.border = '1px solid black';
 //
+//             let p = document.createElement('p');
+//             td.appendChild(p);
+//             p.innerText = elem;
+//         }
+//     }
+// }
+// table(3,4, 'hello');
+
+
 // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
+// let trInput = document.createElement('input');
+// trInput.setAttribute('value', '');
+// trInput.setAttribute('placeholder', 'Table rows');
+// document.body.appendChild(trInput);
 //
+// let tdInput = document.createElement('input');
+// tdInput.setAttribute('value', '');
+// tdInput.setAttribute('placeholder', 'Table data');
+// document.body.appendChild(tdInput);
+//
+// let infoInput = document.createElement('input');
+// infoInput.setAttribute('value', '');
+// infoInput.setAttribute('placeholder', 'Text');
+// document.body.appendChild(infoInput);
+//
+// let button = document.createElement('button');
+// button.setAttribute('type', 'submit');
+// button.innerText = 'Make a Table!'
+// document.body.appendChild(button);
+//
+// button.addEventListener('click',()=>{
+//     table(trInput.value, tdInput.value, infoInput.value);
+// })
+//
+// function table(tr, td, elem){
+//     let table = document.createElement('table');
+//     document.body.appendChild(table);
+//     table.style.border = '1px solid black';
+//
+//     for (let i = 0; i < tr; i++) {
+//         let tr = document.createElement('tr');
+//         table.appendChild(tr);
+//         tr.style.border = '1px solid black';
+//         for (let j = 0; j < td; j++) {
+//             let td = document.createElement('td');
+//             tr.appendChild(td);
+//             td.style.border = '1px solid black';
+//
+//             let p = document.createElement('p');
+//             td.appendChild(p);
+//             p.innerText = elem;
+//         }
+//     }
+// }
+
+
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
-//
-//
+
+
 // - Сворити масив не цензцрних слів.
 //     Сворити інпут текстового типу.
 //     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
