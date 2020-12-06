@@ -1,0 +1,13 @@
+.hidden {
+    display: none;
+}
+
+#cat{
+    height: 500px;
+    display: flex;
+}
+
+#left,
+#right {
+    width: 150px;
+}

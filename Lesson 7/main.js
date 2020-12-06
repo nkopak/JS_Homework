@@ -241,27 +241,97 @@
 //             td.appendChild(p);
 //             p.innerText = elem;
 //         }
-//     }
+//     }<
 // }
 
-
+//<!--carousel-->
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+// let images = ['https://i.pinimg.com/736x/25/40/de/2540de1db897bbbc4972d348447f0bb8.jpg',
+// 'https://i.pinimg.com/originals/b9/86/bc/b986bcd86ceecddf4d35a2f53e94e30e.jpg',
+// 'https://cutecatsanddogs.com/wp-content/uploads/2014/10/funny-videos-funny-cats-funny-ca1.jpg',
+// 'https://www.newshub.co.nz/dam/form-uploaded-images-ordered/2019/08/08/KNOWYOURMEME-sad-cat-crying-1120.JPG',
+// 'https://i.pinimg.com/564x/75/1e/6d/751e6d6a890c6ff97326849bd0c2f604.jpg']
+//
+// let right = document.getElementById('right');
+// let left = document.getElementById('left');
+// document.carousel.src = images[0];
+// let i = 0;
+//
+// right.addEventListener('click', ()=>{
+//     if(i < images.length-1){
+//         i++;
+//         document.carousel.src = images[i];
+//         return
+//     }
+//         i = 0;
+//         document.carousel.src = images[i];
+// })
+//
+// left.addEventListener('click', ()=>{
+//     if(i <= 0){
+//         i = images.length-1
+//         document.carousel.src = images[i];
+//         return
+//     }
+//         i--;
+//         document.carousel.src = images[i]
+// })
 
 
+//<!--bad words-->
 // - Сворити масив не цензцрних слів.
 //     Сворити інпут текстового типу.
 //     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
 // кинути алерт з попередженням.
 //     Перевірку робити при натисканні на кнопку
+// let badWords = ['курва', 'сука', 'чорт', 'дідько', 'пизда', 'пиздєц', 'хуй', 'підар', 'уйобок', 'блядь', 'їбати', 'їбанат', 'хер', 'мудило', 'гімнюк', 'засранець', 'fuck', 'bitch', 'asshole', 'jackass', 'shit', 'suck', 'dick', 'idiot', ]
+
+// let word = document.getElementById('badWord');
+// let btn = document.getElementById('submit');
+// let div = document.getElementsByTagName('div')[0];
+// let label = document.getElementById('label');
+// label.innerText = 'Введіть слово: ';
 //
+// btn.addEventListener('click',()=>{
+//     let chosenWord = word.value.toLowerCase();
 //
+//     for (const word of badWords) {
+//         if (chosenWord === word){
+//             alert('Не матюкайся!');
+//             return
+//         }
+//     }
+//     let greet = document.createElement('h1');
+//     div.appendChild(greet);
+//     greet.innerText = 'То є нормальне слово:)';
+// })
+
 // - Сворити масив не цензцрних слів.
 //     Сворити інпут текстового типу.
 //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
 //     Кинути алерт з попередженням у випадку якщо містить.
 //     Перевірку робити при натисканні на кнопку
+
+// let badWords = ['курва', 'сука', 'чорт', 'дідько', 'пизда', 'пиздєц', 'хуй', 'підар', 'уйобок', 'блядь', 'їбати', 'їбанат', 'хер', 'мудило', 'гімнюк', 'засранець', 'fuck', 'bitch', 'asshole', 'jackass', 'shit', 'suck', 'dick', 'idiot', ]
+// let words = document.getElementById('badWord');
+// let btn = document.getElementById('submit');
+// let div = document.getElementsByTagName('div')[0];
+//let label = document.getElementById('label');
+// label.innerText = 'Введіть речення: ';
 //
+// btn.addEventListener('click',()=>{
+//     let wordsArray = words.value.toLowerCase().split(' ');
 //
+//     for (const word of badWords) {
+//         if (wordsArray.includes(word)){
+//             alert('Не матюкайся!');
+//             return
+//         }
+//     }
+//     let greet = document.createElement('h1');
+//     div.appendChild(greet);
+//     greet.innerText = 'Поганих слів не знайдено в масиві не знайдено:)';
+// })
 //
 // -- создать скрипт, который берет считывает на странице (rules.html) текст и делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
 //     При клике на пункт оглавления вы должны отправляться к этому пункту в тексте
@@ -295,3 +365,4 @@
 //
 //
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
+
